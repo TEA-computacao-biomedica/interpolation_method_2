@@ -1,4 +1,6 @@
 import numpy as np
+import pandas as pd
+import utils as utils
 
 # Coordenadas dos eletrodos
 coordenadas = [(296, 276), (153, 95), (222, 106), (223, 58), (247, 161), (199, 161), (153, 154), (108, 142),
@@ -21,12 +23,9 @@ for i in range(64):
         distancia = np.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
         matriz_distancia[i, j] = distancia
         matriz_distancia[j, i] = distancia
+        
+df = pd.DataFrame(matriz_distancia, index=utils.CHANNELS, columns=utils.CHANNELS)
 
-# Definir o número de casas decimais a serem exibidas
-np.set_printoptions(precision=4, suppress=True)
+df = df.round(4)
 
-# Imprimir a matriz de distância
-print(matriz_distancia)
-
-# Salvar a matriz em um arquivo CSV
-np.savetxt('matriz_distancia.csv', matriz_distancia, delimiter=',', fmt='%.4f')
+#print(df)

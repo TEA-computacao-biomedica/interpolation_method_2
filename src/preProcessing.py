@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 import utils as utils
 
+# todo-question: pra que serve essa variável? 
 nameFile = [] 
 
 # função para ler todos os arquivos dos pacientes em csv 
