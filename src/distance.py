@@ -21,11 +21,10 @@ for i in range(64):
         x1, y1 = coordenadas[i]
         x2, y2 = coordenadas[j]
         distancia = np.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
-        matriz_distancia[i, j] = distancia
-        matriz_distancia[j, i] = distancia
+        matriz_distancia[i, j] = round(distancia,4)
+        matriz_distancia[j, i] = round(distancia,4)
         
 df = pd.DataFrame(matriz_distancia, index=utils.CHANNELS, columns=utils.CHANNELS)
+df.to_csv('distanse_matriz.csv', index=True)
 
-df = df.round(4)
 
-#print(df)
