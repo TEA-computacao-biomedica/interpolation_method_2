@@ -25,6 +25,6 @@ for i in range(64):
         matriz_distancia[j, i] = round(distancia,4)
         
 df = pd.DataFrame(matriz_distancia, index=utils.CHANNELS, columns=utils.CHANNELS)
-df.to_csv('distanse_matriz.csv', index=True)
+df.to_csv('distance_matriz.csv', index=True)
 
 
