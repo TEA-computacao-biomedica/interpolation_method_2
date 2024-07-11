@@ -6,3 +6,8 @@ CHANNELS = ['CZ', 'AF7', 'AF3', 'FP1', 'F1', 'F3', 'F5', 'F7', 'FT7', 'FC1', 'FC
 
 #* arquivos com dados separados por vírgula
 FILES_SEP = ['25_P.csv','1_P.csv', '31_P.csv', '5_P.csv', '20_P.csv', '9_P.csv', '29_P.csv', '24_P.csv', '6_P.csv']
+
+#* Caminho para as novas pastas onde os arquivos filtrados serão salvos
+PATH_CP1_CP2 = '/home/mavi/Documentos/Pesquisa/interpolation_method_2/dataset/only_CP1_CP2'
+PATH_FC1_FC2 = '/home/mavi/Documentos/Pesquisa/interpolation_method_2/dataset/only_FC1_FC2'
+PATH_CP1_CP2_FC1_FC2 = '/home/mavi/Documentos/Pesquisa/interpolation_method_2/dataset/only_CP1_CP2_FC1_FC2'
