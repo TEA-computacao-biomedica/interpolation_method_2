@@ -1,6 +1,5 @@
 import glob
 import os
-import numpy as np
 import pandas as pd
 import utils as utils
 import distance as dist
@@ -20,18 +19,16 @@ def read_folder():
 
         if fileName in utils.FILES_SEP:
             df = pd.read_csv(file, sep = ",")
-            df.columns = df.columns.str.upper()
-            df = df.iloc[:, 1:] #* retirando coluna "Time"
             df, channelsMiss = insert_columns(df)
             df = algorithm(df, channelsMiss, fileName)
-        
         
         else:
             df = pd.read_csv(file, sep = "\t") #* arquivos separados por tabulação
-            df.columns = df.columns.str.upper()
-            df = df.iloc[:, 1:]
             df, channelsMiss = insert_columns(df)
             df = algorithm(df, channelsMiss, fileName)
+            
+        df.columns = df.columns.str.upper()
+        df = df.iloc[:, 1:] #* retirando coluna "Time"
           
 def save_file(fileName, nameFile, df):
     df.to_csv(''.join(fileName) + "/" + nameFile, index= False)  
